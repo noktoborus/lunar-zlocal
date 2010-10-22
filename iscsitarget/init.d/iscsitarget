@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# chkconfig: 345 39 35
+# description: Starts and stops the iSCSI target
+#
+# processname: ietd
+# pidfile: /var/run/ietd.pid
+# config:  /etc/ietd.conf
+
+[ -f /etc/config.d/iscsitarget ] && . /etc/config.d/iscsitarget
+ARGS=${ARGS-""}
+
+start()
+{
+	INF=""
+	RET=0
+	echo -n "Starting iSCSI Target: "
+	[ $RET -eq 0 ] && INF="`modprobe crc32c 2>/dev/stdout`"
+	RET=$?
+	[ $RET -eq 0 ] && INF="`modprobe iscsi_trgt 2>/dev/stdout`"
+	RET=$?
+	[ $RET -eq 0 ] && INF="`/usr/sbin/ietd $ARGS`"
+	RET=$?
+	if [ $RET -ne 0 ];
+	then
+		echo -n "$INF"
+		echo -e $RESULT_FAIL
+		return 1
+	else
+		echo -e $RESULT_OK
+		return 0
+	fi
+}
+
+stop()
+{
+	RET=""
+	INF=""
+	echo -n "Stopping iSCSI Target: "
+	ietadm --op delete 2>/dev/null >/dev/null
+	killall ietd 2>/dev/null >/dev/null
+	RET=$?
+	if [ $RET -eq 0 ]; then
+		echo -e $RESULT_OK
+		return 0
+	else
+		echo -e $RESULT_FAIL
+		return 1
+	fi
+}
+
+restart()
+{
+	stop
+	sleep 1
+	start
+}
+
+. /lib/lsb/init-functions
+

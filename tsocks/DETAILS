@@ -1,0 +1,15 @@
+          MODULE=tsocks
+         VERSION=1.8beta5
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/$MODULE
+      SOURCE_VFY=sha1:489f88c5df999ba21b27cdaa7836d9426d062aec
+	  SOURCE_DIRECTORY=$BUILD_DIRECTORY/tsocks-1.8
+        WEB_SITE=http://tsocks.sf.net/
+         ENTERED=20101015
+         UPDATED=20101015
+           SHORT="Socks4/5 socksificator"
+
+cat << EOF
+Transparent access to Socks4/5 proxy-server
+from your's network utilites
+EOF

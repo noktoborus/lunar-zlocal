@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# chkconfig: 345 80 20
+# description: Teredo client daemon
+# processname: miredo
+# config:      /etc/miredo/miredo.conf
+
+. /lib/lsb/init-functions
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# chkconfig: 345 45 55
+# processname: tor
+# description: Set tor daemon status
+# config:  /etc/tor/torrc
+# pidfile: /var/run/tor.pid
+
+ARGS="-f /etc/tor/torrc --quiet RunAsDaemon 1"
+. /lib/lsb/init-functions
+

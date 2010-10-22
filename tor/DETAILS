@@ -1,0 +1,17 @@
+          MODULE=tor
+         VERSION=0.2.1.26
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://www.torproject.org/dist/
+	  SOURCE_VFY=sha1:87af7aa658774031d181340848a875e4fd8e27bf
+        WEB_SITE=http://www.torproject.org/
+         ENTERED=20101015
+         UPDATED=20101015
+           SHORT="Node server for Tor network"
+
+cat << EOF
+Tor is a network of virtual tunnels that allows
+people and groups to improve their privacy
+and security on the Internet. It also enables
+software developers to create new communication
+tools with built-in privacy features.
+EOF

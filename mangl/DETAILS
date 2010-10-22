@@ -1,0 +1,19 @@
+          MODULE=mangl
+         VERSION=1
+          SOURCE=mangl.tar.Z
+		 SOURCE2=manglu.tar.Z
+		 SOURCE3=manglx.tar.Z
+      SOURCE_URL=ftp://ftp.sgi.com/sgi/opengl/doc/
+     SOURCE2_URL=ftp://ftp.sgi.com/sgi/opengl/doc/
+     SOURCE3_URL=ftp://ftp.sgi.com/sgi/opengl/doc/
+      SOURCE_VFY=sha1:4751c9d0788c3a92c0bc0f5ac1db8fb17f984f3e
+     SOURCE2_VFY=sha1:aa7e6293f0134f03a9b527edbd402939158a6163
+     SOURCE3_VFY=sha1:9ed83c1b50decfabb2b48ff323f8ef87a0631df2
+	  SOURCE_DIRECTORY=$BUILD_DIRECTORY/release
+        WEB_SITE=http://opengl.org
+         ENTERED=20101016
+         UPDATED=20101016
+           SHORT="OpenGL/glx/glu manpages"
+
+cat << EOF
+EOF

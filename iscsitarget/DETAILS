@@ -1,0 +1,14 @@
+          MODULE=iscsitarget
+         VERSION=1.4.20.2
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/$MODULE
+      SOURCE_VFY=sha1:adfa2ff4defe93df7c26878b554731a268f0ecac
+        WEB_SITE=http://iscsitarget.sf.net/
+         ENTERED=20101013
+         UPDATED=20101015
+           SHORT="iSCSI Enterprise Target"
+
+cat << EOF
+iSCSI Enterprise Target (IET) software is
+for building an iSCSI storage system on Linux.
+EOF

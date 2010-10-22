@@ -1,0 +1,14 @@
+          MODULE=vidalia
+         VERSION=0.2.10
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://www.torproject.org/vidalia/dist/
+      SOURCE_VFY=sha1:a70b4ceece9b54e15d7f4929a4d790e9c61c55df
+        WEB_SITE=https://www.torproject.org/projects/vidalia
+         ENTERED=20101017
+         UPDATED=20101017
+           SHORT="Tor fronted"
+
+cat << EOF
+Cross-platform controller GUI for the Tor
+software, built using the Qt framework.
+EOF

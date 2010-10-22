@@ -1,0 +1,13 @@
+          MODULE=miredo
+         VERSION=1.2.3
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=http://www.remlab.net/files/$MODULE
+      SOURCE_VFY=sha1:1ee8f24077cc707938360e4cf78948c8f7ae6dac
+        WEB_SITE=http://www.remlab.net/miredo/
+         ENTERED=20101017
+         UPDATED=20101017
+		    OPTS="--without-Judy"
+           SHORT="IPv6 tunneler, implementation on Teredo client"
+
+cat << EOF
+EOF
