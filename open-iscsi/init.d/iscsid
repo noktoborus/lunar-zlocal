@@ -11,9 +11,9 @@ start ()
 	INF="`status`"
 	[ $? -eq 0 ] && echo -e "$INF" && return 1
 	echo -n "Starting iSCSI initiator service: "
-	[ $RET -eq 0 ] && INF="`modprobe iscsi_tcp 2>/dev/stout >/dev/null`"
+	[ $RET -eq 0 ] && INF="`modprobe iscsi_tcp 2>&1 >/dev/null`"
 	RET=$?
-	[ $RET -eq 0 ] && INF="`modprobe ib_iser 2>/dev/stdout >/dev/null`"
+	[ $RET -eq 0 ] && INF="`modprobe ib_iser 2>&1 >/dev/null`"
 	RET=$?
 	[ $RET -eq 0 ] && INF="`/sbin/iscsid`"
 	RET=$?

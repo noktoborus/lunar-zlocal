@@ -5,7 +5,7 @@
       SOURCE_VFY=sha1:adfa2ff4defe93df7c26878b554731a268f0ecac
         WEB_SITE=http://iscsitarget.sf.net/
          ENTERED=20101013
-         UPDATED=20101015
+         UPDATED=20101024
            SHORT="iSCSI Enterprise Target"
 
 cat << EOF

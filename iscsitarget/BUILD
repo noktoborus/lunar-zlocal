@@ -13,11 +13,34 @@
  			install -vD -m 640 etc/ietd.conf \\
 
 EOF
+	patch -p0 <<EOF
+--- kernel/conn.c
++++ kernel/conn.c
+@@ -13,6 +13,19 @@
+ #include "iscsi_dbg.h"
+ #include "digest.h"
+ 
++#ifndef NIPQUAD
++# define NIPQUAD(addr) \\
++	((unsigned char *)&addr)[0], \\
++	((unsigned char *)&addr)[1], \\
++	((unsigned char *)&addr)[2], \\
++	((unsigned char *)&addr)[3]
++#endif
++#ifndef NIPQUAD_FMT
++# define NIPQUAD_FMT "%u.%u.%u.%u"
++#endif
++
++
++
+ static void print_conn_state(char *p, size_t size, unsigned long state)
+ {
+ 	if (test_bit(CONN_ACTIVE, &state))
+
+EOF
 	
-	echo "EOF"
 	make KSRC=/usr/src/linux kernel usr &&
 	make KSRC=/usr/src/linux &&
-	echo "PATCH"
 	prepare_install &&
 	make KSRC=/usr/src/linux install-kernel &&
 	make KSRC=/usr/src/linux install-etc &&

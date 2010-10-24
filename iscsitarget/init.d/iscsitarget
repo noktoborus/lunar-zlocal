@@ -15,9 +15,9 @@ start()
 	INF=""
 	RET=0
 	echo -n "Starting iSCSI Target: "
-	[ $RET -eq 0 ] && INF="`modprobe crc32c 2>/dev/stdout`"
+	[ $RET -eq 0 ] && INF="`modprobe crc32c 2>&1`"
 	RET=$?
-	[ $RET -eq 0 ] && INF="`modprobe iscsi_trgt 2>/dev/stdout`"
+	[ $RET -eq 0 ] && INF="`modprobe iscsi_trgt 2>&1`"
 	RET=$?
 	[ $RET -eq 0 ] && INF="`/usr/sbin/ietd $ARGS`"
 	RET=$?
