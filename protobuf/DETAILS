@@ -1,0 +1,12 @@
+          MODULE=protobuf
+         VERSION=2.3.0
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=http://$MODULE.googlecode.com/files/
+      SOURCE_VFY=sha1:db0fbdc58be22a676335a37787178a4dfddf93c6
+        WEB_SITE=http://protobuf.googlecode.com/
+         ENTERED=20101031
+         UPDATED=20101031
+           SHORT=""
+
+cat << EOF
+EOF

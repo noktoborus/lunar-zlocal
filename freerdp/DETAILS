@@ -1,0 +1,13 @@
+          MODULEf=freerdp
+         VERSION=0.8.1
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/$MODULE
+      SOURCE_VFY=sha1:223a019efb71927b1d3a7245e6a631b5b6f0060f 
+        WEB_SITE=http://www.freerdp.com
+         ENTERED=20101027
+         UPDATED=20101027
+           SHORT="A Windows terminal services client"
+
+cat << EOF
+FreeRDP is a enchanted rdesktop fork
+EOF

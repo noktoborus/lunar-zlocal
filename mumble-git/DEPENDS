@@ -1,0 +1,7 @@
+depends protobuf
+depends boost
+depends qt4
+optional_depends celt-git "CONFIG+=no-boundled-celt" "" "For external celt codec"
+optional_depends speex "CONFIG+=no-boundled-speex" "" "For external speex codec"
+optional_depends avahi "" "CONFIG+=no-bonjour" "For Bonjour service"
+optional_depends libspeechd "" "CONFIG+=no-speechd" "Text-to-speech support"

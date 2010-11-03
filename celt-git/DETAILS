@@ -1,0 +1,11 @@
+          MODULE=celt-git
+         VERSION=1
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=git://git.xiph.org/celt.git
+        WEB_SITE=http://celt-codec.org/
+         ENTERED=20101031
+         UPDATED=`date -u +%Y%m%d`
+           SHORT="Simular to speex, but with above bitrate"
+
+cat << EOF
+EOF

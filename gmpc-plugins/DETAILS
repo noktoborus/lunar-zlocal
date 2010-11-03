@@ -1,0 +1,12 @@
+          MODULE=gmpc-plugins
+         VERSION=0.20.0
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=http://download.sarine.nl/Programs/gmpc/$VERSION
+      SOURCE_VFY=sha1:aff89318bd69616cfb7c34543616b6c10d2d734a
+        WEB_SITE=http://www.gnunet.org/
+         ENTERED=20101025
+         UPDATED=20101025
+           SHORT="plugins pack for gmpc"
+
+cat << EOF
+EOF

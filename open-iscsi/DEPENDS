@@ -1,0 +1,1 @@
+mquery USE_KERNEL "Use kernel-side modules" y

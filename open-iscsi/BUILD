@@ -19,8 +19,10 @@
  }
 EOF
 
-	make KSRC=/usr/src/linux user &&
-	prepare_install       &&
+	make KSRC=/usr/src/linux user
+	[ $USE_KERNEL == "n" ] && make KSRC=/usr/src/linux kernel
+	prepare_install
 	make install_user
+	[ $USE_KERNEL == "n" ] && make install_kernel
 ) > $C_FIFO 2>&1
 

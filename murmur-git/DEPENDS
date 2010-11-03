@@ -1,0 +1,6 @@
+depends protobuf
+depends qt4
+depends openssl
+optional_depends avahi "" "CONFIG+=no-bonjour" "Use Bonjour service"
+optional_depends Ice "CONFIG+=no-ice" "" "Use Ice control"
+optional_depends dbus "CONFIG+=no-dbus" "" "Use D-BUS transport"

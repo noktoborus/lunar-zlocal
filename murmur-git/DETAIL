@@ -1,0 +1,13 @@
+          MODULE=murmur-git
+         VERSION=1
+          SOURCE=mumble-git-$VERSION.tar.bz2
+      SOURCE_URL=git://mumble.git.sourceforge.net/gitroot/mumble/mumble
+SOURCE_DIRECTORY=$BUILD_DIRECTORY/mumble-git-$VERSION
+        WEB_SITE=http://mumble.sf.net/
+         ENTERED=20101101
+         UPDATED=20101101
+           SHORT="Mumble server"
+
+cat << EOF
+EOF
+

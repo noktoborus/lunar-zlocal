@@ -1,0 +1,16 @@
+          MODULE=pcc-libs-cvs
+         VERSION=1
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=cvs://:pserver:anonymous@pcc.ludd.ltu.se:/cvsroot:pcc-libs
+        WEB_SITE=http://pcc.ludd.ltu.se/
+         ENTERED=20101026
+         UPDATED=`date -u +%Y%m%d`
+           SHORT="Collection of libs for pcc"
+
+cat << EOF
+The project goal is to write a C99 compiler while still
+keeping it small, simple, fast and understandable.
+PCC is not affiliated with any other project,
+but the compiler has been imported into the
+OpenBSD and NetBSD base systems.
+EOF

@@ -1,0 +1,14 @@
+          MODULE=mpdscribble
+         VERSION=0.20
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=http://downloads.sourceforge.net/project/musicpd/$MODULE/$VERSION/
+      SOURCE_VFY=sha1:4030c2378ec3e8814fe60835de886ba5afd648a5
+        WEB_SITE=http://mpd.wikia.com/wiki/Client:Mpdscribble
+         ENTERED=20101025
+         UPDATED=20101025
+           SHORT="audiscrobbler client for submit data from mpd"
+
+cat << EOF
+MPD client which submits information
+about tracks being played to Last.fm (formerly audioscrobbler). 
+EOF
