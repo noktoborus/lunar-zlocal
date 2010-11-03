@@ -5,7 +5,7 @@
 SOURCE_DIRECTORY=$BUILD_DIRECTORY/mumble-git-$VERSION
         WEB_SITE=http://mumble.sf.net/
          ENTERED=20101101
-         UPDATED=20101101
+         UPDATED=`date -u +%Y%m%d`
            SHORT="Mumble server"
 
 cat << EOF

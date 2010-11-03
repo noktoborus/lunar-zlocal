@@ -4,8 +4,8 @@
       SOURCE_URL=git://mumble.git.sourceforge.net/gitroot/mumble/mumble
         WEB_SITE=http://mumble.sf.net/
          ENTERED=20101031
-         UPDATED=20101031
-           SHORT=""
+         UPDATED=`date -u +%Y%m%d`
+           SHORT="VoIP Client, simular to Teamspeak"
 
 cat << EOF
 EOF
