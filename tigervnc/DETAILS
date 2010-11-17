@@ -1,0 +1,17 @@
+          MODULE=tigervnc
+         VERSION=1.0.1
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/$MODULE
+	  SOURCE_VFY=sha1:0c3dd6a3540966fea979a06df08c3aa9bdd1dc67
+        WEB_SITE=http://www.tigervnc.com/
+         ENTERED=20101115
+         UPDATED=20101115
+           SHORT="RFB(VNC) Client"
+
+cat << EOF
+TigerVNC is a suite of VNC servers and clients
+that have a focus on performance and remote
+display functionality. Originally this
+software was based on the (never released)
+VNC 4 branch of TightVNC.
+EOF

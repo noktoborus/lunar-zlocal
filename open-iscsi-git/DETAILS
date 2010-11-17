@@ -1,0 +1,14 @@
+          MODULE=open-iscsi-git
+         VERSION=1
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=git://git.kernel.org/pub/scm/linux/kernel/git/mnc/open-iscsi.git 
+        WEB_SITE=http://www.open-iscsi.org/
+         ENTERED=20101012
+         UPDATED=`date -u +%Y%m%d`
+           SHORT="iSCSI Initiator implementation (RFC 3720)"
+
+cat << EOF
+Open-iSCSI project is a high performance,
+transport independent, multi-platform
+implementation of RFC3720.
+EOF

@@ -1,0 +1,109 @@
+#!/bin/bash
+#
+# chkconfig: 345 45 55
+# processname: iscsid
+# description: Starts and stops the iSCSI initiator
+# config:  /etc/iscsi/iscsid.conf
+
+start ()
+{
+	RET=0
+	INF="`status`"
+	[ $? -eq 0 ] && echo -e "$INF" && return 1
+	echo -n "Starting iSCSI initiator service: "
+	[ $RET -eq 0 ] && INF="`modprobe iscsi_tcp 2>&1 >/dev/null`"
+	RET=$?
+	[ $RET -eq 0 ] && INF="`modprobe ib_iser 2>&1 >/dev/null`"
+	RET=$?
+	[ $RET -eq 0 ] && INF="`/sbin/iscsid`"
+	RET=$?
+	if [ $RET -ne 0 ];
+	then
+		echo -n "$INF"
+		echo -e $RESULT_FAIL;
+		return
+	fi
+	echo -e $RESULT_OK
+	touch /var/lock/open-iscsi
+	echo -n "Setting up iSCSI targets: "
+	INF="`iscsiadm -m node --loginall=automatic 2>/dev/stdout >/dev/null`"
+	RET=$?
+	if [ $RET -ne 0 ];
+	then
+		echo -n $INF
+		echo -e $RESULT_WARN
+		return
+	fi
+	echo -e $RESULT_OK
+}
+
+stop ()
+{
+	VAL=0
+	RET=""
+	INF="`status`"
+	[ $? -ne 0 ] && echo -e "iSCSI Initiator stopped: $RESULT_OK" && return 0
+	echo -n "Setting down iSCSI targets: "
+	for COUNT in 5 4 3 2 1;
+	do
+		sync
+		INF="`iscsiadm -m node --logoutall=all` 2>/dev/stdout >/dev/null"
+		RET=$?
+		if [ $RET -ne 0 ];
+		then
+			echo -n "$COUNT "
+			sleep 1
+		else
+			echo -e $RESULT_OK
+			break
+		fi
+	done
+	[ $RET -ne 0 ] && echo -e $RESULT_FAIL && VAL=1
+	echo -n "Stopping iSCSI initiator service: "
+	for COUNT in 5 4 3 2 1;
+	do
+		INF="`iscsiadm -k 0 2>/dev/stdout >/dev/null`"
+		if [ ! -z "$INF" ];
+		then
+			echo -n "$COUNT "
+			sleep 1
+		else
+			echo -e $RESULT_OK
+			rm -f /var/lock/open-iscsi
+			break
+		fi
+	done
+	[ ! -z "$INF" ] && echo -e $RESULT_FAIL && VAL=1
+	rm -f /var/run/iscsid.pid
+	modprobe -r iscsi_tcp 2>/dev/null >/dev/null
+	modprobe -r ib_iser 2>/dev/null >/dev/null
+	return $VAL
+}
+
+status ()
+{
+	ST=""
+	PID="/var/run/iscsid.pid"
+	[ -f "$PID" ] && PID="`cat \"$PID\"`"
+	echo -n "iSCSId running: "
+	ST="`ps -C iscsid -o pid= | awk '{print \$1}' | grep \"^${PID}$\"`"
+	if [ -z "$ST" ];
+	then
+		echo -e $RESULT_FAIL
+		return 1
+	else
+		echo -e $RESULT_OK
+		return 0
+	fi
+}
+
+restart ()
+{
+	stop
+	sleep 1
+	start
+
+}
+
+. /lib/lsb/init-functions
+

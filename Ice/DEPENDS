@@ -1,0 +1,5 @@
+depends db
+depends mcpp
+mquery NEED_CPP "Compile Ice for C++?" y
+mquery NEED_PHP "Compile Ice for PHP?" n
+

@@ -1,0 +1,12 @@
+          MODULE=Ice
+         VERSION=3.4.1
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=http://www.zeroc.com/download/$MODULE/
+      SOURCE_VFY=sha1:f3ae394146a36fa6453dc69e80d2ab6ab30f4d9a
+        WEB_SITE=http://zeroc.com/
+         ENTERED=20101101
+         UPDATED=20101101
+           SHORT=""
+
+cat << EOF
+EOF

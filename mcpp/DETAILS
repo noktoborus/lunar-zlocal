@@ -1,0 +1,12 @@
+          MODULE=mcpp
+         VERSION=2.7.2
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/$MODULE
+      SOURCE_VFY=sha1:703356b7c2cd30d7fb6000625bf3ccc2eb977ecb
+        WEB_SITE=http://mcpp.sf.net/
+         ENTERED=20101101
+           SHORT="C/C++ preprocessor"
+           OPTS+="--enable-mcpplib --enable-shared"
+
+cat << EOF
+EOF

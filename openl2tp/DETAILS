@@ -1,0 +1,12 @@
+          MODULE=openl2tp
+         VERSION=1.7
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/$MODULE
+      SOURCE_VFY=sha1:f79e5229b8501664e98bac8229a6d8547b43467b
+        WEB_SITE=http://openl2tp.sf.net/
+         ENTERED=20101106
+         UPDATED=20101106
+           SHORT="Layer 2 client"
+
+cat << EOF
+EOF

@@ -1,0 +1,15 @@
+          MODULE=open-iscsi
+         VERSION=2.0-872
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=$KERNEL_URL/pub/linux/kernel/people/mnc/open-iscsi/releases
+      SOURCE_VFY=sha1:59b868f9c09a5075c0875213dbf1a34b10dc85e4
+        WEB_SITE=http://www.open-iscsi.org/
+         ENTERED=20101012
+         UPDATED=20101024
+           SHORT="iSCSI Initiator implementation (RFC 3720)"
+
+cat << EOF
+Open-iSCSI project is a high performance,
+transport independent, multi-platform
+implementation of RFC3720.
+EOF
